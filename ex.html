@@ -14,9 +14,25 @@
 
       $.get('https://www.naver.com', function(id) {
         if(id === 'john') {
-
+          $.get('www.daum.net', function(products){
+            console.log(products);
+          })          
         }
       });
+
+      function getId() {
+        return new Promise(function(resolve, reject) {
+          resolve(id);
+        });
+      }
+
+      getId().then(function(id) {
+        if(id === 'john') {
+          $.get('domain.com/products', function(products) {
+            console.log(products);
+          });
+        }
+      })
 
 
 
